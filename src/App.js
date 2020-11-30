@@ -1,67 +1,51 @@
-import {React,useState} from 'react';
-import './App.css';
-import './bootstrap.min.css';
-import { AiFillLinkedin } from 'react-icons/ai';
+import React from "react";
+import Home from './components/Home';
+import Login from './components/Login';
+import Search from './components/Search';
+import Booking from './components/Booking';
+import Register from './components/Register';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </nav>
 
-const App = props => {
-  const [from, setFrom] = useState()
-  const [to, setTo] = useState()
-  const [depdate, setDepdate] = useState()
-  const [arrdate, setArrdate] = useState()
-
-  const handleSubmit = event => {
-    alert(from+to+depdate+arrdate)
-    event.preventDefault()
-  }
-    return (
-        <div className="back">
-        <div className="back2">
-          <div className="searchbox">
-          <h3>Book Flights</h3>
-          <form className="form-group" onSubmit={handleSubmit} >
-          <label >
-                From : 
-                <input type="text" name="from" value={from} onChange={({target}) => setFrom(target.value)} required />
-              </label><br/>
-              <label>
-                To : 
-                <input type="text" name="to" value={to} onChange={({target}) => setTo(target.value)} required/>
-              </label><br/>
-              <label>Departure Date :
-              <input type="date" name="date1" value={depdate} onChange={({target}) => setDepdate(target.value)} required /><br></br>
-              </label>
-              <label>Return Date :
-              <input type="date" name="date2" value={arrdate} onChange={({target}) => setArrdate(target.value)} required /><br></br>
-              </label>
-              <input type="submit" value="Submit" />
-          </form>
-
-          </div>
-        </div>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/booking">
+            <Booking />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    );
-  }
-
-export default App;
-
-/* 
-<form>
-              <label>
-                From:
-                <input type="text" name="from" />
-              </label><br/>
-              <label>
-                To:
-                <input type="text" name="from" />
-              </label><br/>
-              <label>Departure Date:
-              <input type="date" name="date1"  /><br></br>
-              </label>
-              <label>Return Date
-              <input type="date" name="date2"  /><br></br>
-              </label>
-              <input type="submit" value="Submit" />
-            </form> 
-*/
-
+    </Router>
+  );
+}

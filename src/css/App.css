@@ -36,4 +36,11 @@
   padding: 50px;
 }
 
+select option {
+  display:inline-block;
+}
 
+.card{
+  width: 80%;
+  align-self: center;
+}

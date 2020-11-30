@@ -1,0 +1,74 @@
+[
+    {
+        "origin": "BLR",
+        "destination": "DEL",
+        "duration": 590,
+        "departureTime": "2020-12-1T21:30-03:00",
+        "arrivalTime": "2020-12-1T06:20-04:00",
+        "company": "Indigo",
+        "price": 4000
+
+    },
+    {
+        "origin": "BLR",
+        "destination": "DEL",
+        "duration": 580,
+        "departureTime": "2020-12-1T20:30-03:00",
+        "arrivalTime": "2020-12-1T05:20-04:00",
+        "company": "SpiceJet",
+        "price": 3900
+
+    },
+    {
+        "origin": "DEL",
+        "destination": "BLR",
+        "duration": 580,
+        "departureTime": "2020-12-1T20:30-03:00",
+        "arrivalTime": "2020-12-1T05:20-04:00",
+        "company": "Air India",
+        "price": 3900
+
+    },
+    {
+        "origin": "BLR",
+        "destination": "MAA",
+        "duration": 580,
+        "departureTime": "2020-12-1T20:30-03:00",
+        "arrivalTime": "2020-12-1T05:20-04:00",
+        "company": "Air Asia",
+        "price": 3900
+
+    },
+    {
+        "origin": "MAA",
+        "destination": "BLR",
+        "duration": 580,
+        "departureTime": "2020-12-1T20:30-03:00",
+        "arrivalTime": "2020-12-1T05:20-04:00",
+        "company": "SpiceJet",
+        "price": 3100
+
+    },
+    {
+        "origin": "BLR",
+        "destination": "BOM",
+        "duration": 580,
+        "departureDate": "2020-12-1",
+        "departureTime": "10:00",
+        "arrivalTime": "10:00",
+        "company": "SpiceJet",
+        "price": 3900,
+        "availability":12
+
+    },
+    {
+        "origin": "BOM",
+        "destination": "BLR",
+        "duration": 580,
+        "departureTime": "2020-12-1T20:30-03:00",
+        "arrivalTime": "2020-12-1T05:20-04:00",
+        "company": "SpiceJet",
+        "price": 3100
+
+    }
+  ]
