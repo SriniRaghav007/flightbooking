@@ -64,6 +64,22 @@ app.post('/users', (req, res) => {
   });
 });
 
+app.post('/booking', (req, res) => {
+  var query = req.body;
+  console.log('Got booking details:', query);
+  mongo.connect(url,{useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, function(err,db){
+    if(err) throw err;
+    var dbo = db.db('flights');
+    dbo.collection("users").find(query).toArray(function(err,resp){
+        if(err) throw err;
+        res.send(resp)
+        db.close();
+    });
+  });
+});
+
+
+
 app.put('/users', (req, res) => {
   var query = req.body;
   console.log('Got update user request:', query.in);
@@ -73,7 +89,7 @@ app.put('/users', (req, res) => {
     dbo.collection("users").updateOne(query.in,{ $set: query.out, $currentDate: { lastModified: true } }
     ,function(err,resp){
         if(err) throw err;
-        res.sendStatus(200)
+        res.send(resp)
         db.close();
     });
   });
@@ -85,7 +101,7 @@ app.put('/update', (req, res) => {
   mongo.connect(url,{useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, function(err,db){
     if(err) throw err;
     var dbo = db.db('flights');
-    dbo.collection("users").updateOne(query.in,{ $set: query.out, $currentDate: { lastModified: true } }
+    dbo.collection("flight_details").updateOne(query.in,{ $set: query.out, $currentDate: { lastModified: true } }
     ,function(err,resp){
         if(err) throw err;
         res.sendStatus(200)
@@ -109,6 +125,3 @@ app.delete('/users', (req, res) => {
 });
 
 app.listen(8080, () => console.log(`Started server at http://localhost:8080!`));
-
-
-

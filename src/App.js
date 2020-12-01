@@ -11,6 +11,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Settings from "./components/Settings";
 
 export default function App() {
   return (
@@ -44,6 +45,9 @@ export default function App() {
           </Route>
           <Route path="/payment">
             <Booking2 />
+          </Route>
+          <Route path="/settings">
+            <Settings />
           </Route>
           <Route path="/">
             <Home />

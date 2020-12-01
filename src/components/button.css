@@ -1,7 +1,9 @@
 :root {
     --primary: #00e1ff;
 }
-
+.red{
+    background-color: #d85d5d;
+}
 .btn {
     padding: 20px 20px;
     border-radius: 4px;

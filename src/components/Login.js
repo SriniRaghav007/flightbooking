@@ -1,5 +1,9 @@
 import {React,useState} from 'react'
-import { useHistory } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Link,
+    useHistory
+  } from "react-router-dom";
 import '../css/main.css'
 import '../css/util.css'
 import Logo from "../images/icons/favicon copy.ico"
@@ -27,7 +31,7 @@ function Login (){
                 alert("Login Successful")
                 alert(JSON.stringify(bearerToken))
                 window.sessionStorage.setItem("token",bearerToken)
-                history.push("/")
+                window.open("/","_self")
             }
             else{
                 alert("Incorrect Username/Password")

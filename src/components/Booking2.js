@@ -1,4 +1,5 @@
 import {React,useState,useEffect} from 'react';
+import jwt_decode from "jwt-decode";
 import axios from 'axios';
 import logo from '../images/icons/favicon.ico'
 import { useHistory } from "react-router-dom";
@@ -40,7 +41,6 @@ const Booking2 = () => {
     }
 
     async function displayRazorpay(flightAmount) {
-        
         const price = queryData.price*100;
         console.log(price)
         const res = await loadScript(
@@ -79,6 +79,50 @@ const Booking2 = () => {
                 const result = await axios.post("http://localhost:8081/payment/verify", data);
                 alert(result.data.status);
                 if(result.data.status === "success"){
+
+                    var postRequest = {"id":queryData.id}
+                    console.log("Post Request"+JSON.stringify(postRequest))
+                    axios.post(mongoUrl,postRequest).then(response =>{
+                        alert("Post Response"+JSON.stringify(response))
+                        var postResponse = response.data[0];
+                        alert(JSON.stringify(postResponse.id))
+                        console.log(JSON.stringify(postResponse.id))
+                        var availNumber = postResponse.availability -1
+                        alert(availNumber)
+                        console.log(availNumber)
+                        var putRequest = {
+                            "in":{"id":queryData.id},
+                            "out":{
+                                "availability":availNumber
+                            }
+                        }
+                        alert(JSON.stringify(putRequest))
+                        console.log(JSON.stringify(putRequest))
+                        var putResponse = axios.put(mongoUrl+"update",putRequest)
+                        alert(JSON.stringify(putResponse))
+
+                        axios.post(mongoUrl+"booking",{"user":jwt_decode(window.sessionStorage.getItem("token")).user}).then(
+                            response => {
+                                alert("booking"+JSON.stringify(response))
+                                var bookingData = response.data[0]
+                                alert("bookingData:"+bookingData["booking"])
+                                bookingData["booking"].push(queryData.id)
+                                var bookArray = bookingData.booking
+
+
+                                var updateUser = {
+                                    "in":{
+                                        "user":jwt_decode(window.sessionStorage.getItem("token")).user
+                                    },
+                                    "out":{
+                                        "booking": bookArray
+                                    }
+                                }
+
+                                var userUpdate =axios.put(mongoUrl+"users",updateUser)
+                                alert("User Update"+userUpdate)
+                        })
+                    })
                     alert("Your Ticket has been booked. Reciept will be sent to your mail soon.")
                     history.push("/")
                 }
