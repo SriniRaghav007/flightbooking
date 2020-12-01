@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Search from './components/Search';
 import Booking from './components/Booking';
+import Booking2 from './components/Booking2';
 import Register from './components/Register';
 import {
   BrowserRouter as Router,
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -24,7 +25,7 @@ export default function App() {
               <Link to="/login">Login</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -40,6 +41,9 @@ export default function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/payment">
+            <Booking2 />
           </Route>
           <Route path="/">
             <Home />

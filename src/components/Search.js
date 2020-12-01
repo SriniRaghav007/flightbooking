@@ -27,24 +27,25 @@ const Search = () =>{
 
     
     return (
-        <div>
+        <div className="back">
         {searchData.map((data, key) => {
           return (
-            <div key={key} className="card">
-              <Card>
-                    <Card.Body>
+            <div key={key}>
+              <Card className="gradient">
+                    <Card.Body >
+                    <Card.Header as="h5">Featured</Card.Header>
                         <Card.Title>{data.company}</Card.Title>
                         <Card.Text>
-                        Key : {key}
+                        Key : {key}<br/>
                         From : {data.origin}<br/>
                         To : {data.destination}<br/>
                         Arrival Time : {data.arrivalTime}<br/>
                         Departure Time : {data.departureTime}<br/>
                         Cost : ₹{data.price}<br/>
                         </Card.Text>
-                        <Button variant="primary" onClick={e => {var query="_id="+data._id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
+                        <Button variant="primary" onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
                     </Card.Body>
-                </Card>
+                </Card> 
                 
             </div>
           );

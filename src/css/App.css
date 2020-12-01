@@ -15,7 +15,7 @@
  }
 
 .back2{
-  background-color: rgba(0, 153, 255, 0.4);
+  background: linear-gradient(90deg,#2b5876,#4e4376);
 	background-size: cover;
   background-position: center;
   position: relative;
@@ -25,15 +25,16 @@
 
 .searchbox{
   position: relative;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin: auto;
   height: 350px;
-  width: 350px;
-  background-color:rgba(255, 255, 255, 0.9);
+  width: 300px;
+  background-color:rgba(255, 255, 255, 0.705);
   padding: 50px;
+  align-content:center;
 }
 
 select option {
@@ -43,4 +44,27 @@ select option {
 .card{
   width: 80%;
   align-self: center;
+}
+
+.App{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sub{
+  
+  color: aqua;
+  padding: 30px;
+  align-content: center;
+}
+
+.sub1{
+  height: 30px;
+  width:80px;
+  background-color:rgb(133, 53, 238) }
+
+.gradient{
+  background: linear-gradient(90deg,  #ffd89b 0%, #19547b 100%);
 }

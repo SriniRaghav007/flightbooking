@@ -8,11 +8,10 @@ const Home = () => {
   const [from, setFrom] = useState()
   const [to, setTo] = useState()
   const [depdate, setDepdate] = useState()
-  const [arrdate, setArrdate] = useState()
   const history = useHistory();
   const handleSubmit = event => {
-    alert(from+to+depdate+arrdate)
-    var query = "?origin="+from+"&destination="+to+"&departureTime="+depdate+"&arrivalTime="+arrdate;
+    alert(from+to+depdate)
+    var query = "?origin="+from+"&destination="+to+"&departureTime="+depdate;
     event.preventDefault()
     history.push({pathname:"/search",search:query})
   }
@@ -47,10 +46,12 @@ const Home = () => {
               <label>Departure Date :
               <input type="date" name="date1" value={depdate} onChange={({target}) => setDepdate(target.value)} required /><br></br>
               </label>
-              <label>Return Date :
+              {/* <label>Return Date :
               <input type="date" name="date2" value={arrdate} onChange={({target}) => setArrdate(target.value)} required /><br></br>
-              </label>
-              <input type="submit" value="Submit" />
+              </label> */}
+              <div className="sub">
+                <input className="sub1"type="submit" value="Submit" />
+                </div>
           </form>
 
           </div>

@@ -21,9 +21,13 @@ function Login (){
         axios.post(mongoUrl,{"user":username,"pass":pass}).then(function (response) {
             console.log(response);
             var status = response.status
+            var bearerToken = response.data.token
             alert(status)
             if(status == 200){
                 alert("Login Successful")
+                alert(JSON.stringify(bearerToken))
+                window.sessionStorage.setItem("token",bearerToken)
+                history.push("/")
             }
             else{
                 alert("Incorrect Username/Password")
