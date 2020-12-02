@@ -19,19 +19,18 @@
 	background-size: cover;
   background-position: center;
   position: relative;
-	height: 100vh;
     
 }
 
 .searchbox{
-  position: relative;
+  position: inline-block;
   top: 40%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin: auto;
-  height: 350px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
   background-color:rgba(255, 255, 255, 0.705);
   padding: 50px;
   align-content:center;

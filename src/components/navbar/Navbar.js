@@ -16,6 +16,7 @@ class Navbar extends Component {
     
     state = { clicked: false }
     handleClick = () => {
+        window.open("/")
         this.setState({ clicked: !this.state.clicked })
     }
 
@@ -30,7 +31,7 @@ class Navbar extends Component {
             return(
 
                 <nav className="NavbarItems">
-                    <h1 className="navbar-logo">React<i className="fab fa-react"></i></h1>
+                    <a href="/"><h1 className="navbar-logo">Airi<i className="fab fa-react"></i></h1></a>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
@@ -46,7 +47,7 @@ class Navbar extends Component {
                         })}
                     </ul> 
                     <Button onClick={this.handleLogout}>Logout</Button>
-                    <Button><a href ="/settings">Settings</a></Button>
+                    <a href ="/settings"><Button>Settings</Button></a>
                 </nav>
             )
         }

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import "../css/App.css"
+import '../css/bootstrap.min.css';
 var url = require('url');
 var mongoUrl = "http://localhost:8080/"
 
@@ -27,26 +28,27 @@ const Search = () =>{
 
     
     return (
-        <div className="back">
+        <div className="back2">
         {searchData.map((data, key) => {
           return (
-            <div key={key}>
-              <Card className="gradient">
+            <div key={key} className="align-items-center">
+              <Card className="gradient " style={{ width: '50%',alignContent:"center",marginLeft:"25%",marginBottom:"1%"}}>
                     <Card.Body >
-                    <Card.Header as="h5">Featured</Card.Header>
+                    {/* <Card.Header as="h5">Featured</Card.Header> */}
                         <Card.Title>{data.company}</Card.Title>
                         <Card.Text>
-                        Key : {key}<br/>
                         From : {data.origin}<br/>
                         To : {data.destination}<br/>
-                        Arrival Time : {data.arrivalTime}<br/>
                         Departure Time : {data.departureTime}<br/>
+                        Arrival Time : {data.arrivalTime}<br/>
+                        Total Duration : {data.duration}<br/>
                         Cost : ₹{data.price}<br/>
+                        Seats Available : {data.availability}<br/>
                         </Card.Text>
                         <Button variant="primary" onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
                     </Card.Body>
                 </Card> 
-                
+              <br/>
             </div>
           );
         })}

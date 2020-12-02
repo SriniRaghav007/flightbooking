@@ -26,7 +26,7 @@ function Login (){
             console.log(response);
             var status = response.status
             var bearerToken = response.data.token
-            alert(status)
+            alert("Verifying the account details")
             if(status == 200){
                 alert("Login Successful")
                 alert(JSON.stringify(bearerToken))

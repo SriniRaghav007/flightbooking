@@ -65,7 +65,7 @@ const Booking2 = () => {
             key: "rzp_test_viDGDEqdmCJlAn", // Enter the Key ID generated from the Dashboard
             amount: amount.toString(),
             currency: currency,
-            name: "Flight Corp.",
+            name: "Airi Corp.",
             description: "Test Transaction",
             image: { logo },
             order_id: order_id,
@@ -77,18 +77,18 @@ const Booking2 = () => {
                     "razorpaySignature": response.razorpay_signature,
                 };
                 const result = await axios.post("http://localhost:8081/payment/verify", data);
-                alert(result.data.status);
+                alert("Verifying your payment");
                 if(result.data.status === "success"){
 
                     var postRequest = {"id":queryData.id}
                     console.log("Post Request"+JSON.stringify(postRequest))
                     axios.post(mongoUrl,postRequest).then(response =>{
-                        alert("Post Response"+JSON.stringify(response))
+                        //alert("Post Response"+JSON.stringify(response))
                         var postResponse = response.data[0];
-                        alert(JSON.stringify(postResponse.id))
+                        //alert(JSON.stringify(postResponse.id))
                         console.log(JSON.stringify(postResponse.id))
                         var availNumber = postResponse.availability -1
-                        alert(availNumber)
+                        //alert(availNumber)
                         console.log(availNumber)
                         var putRequest = {
                             "in":{"id":queryData.id},
@@ -96,16 +96,16 @@ const Booking2 = () => {
                                 "availability":availNumber
                             }
                         }
-                        alert(JSON.stringify(putRequest))
+                        //alert(JSON.stringify(putRequest))
                         console.log(JSON.stringify(putRequest))
                         var putResponse = axios.put(mongoUrl+"update",putRequest)
-                        alert(JSON.stringify(putResponse))
+                        //alert(JSON.stringify(putResponse))
 
                         axios.post(mongoUrl+"booking",{"user":jwt_decode(window.sessionStorage.getItem("token")).user}).then(
                             response => {
-                                alert("booking"+JSON.stringify(response))
+                                //alert("booking"+JSON.stringify(response))
                                 var bookingData = response.data[0]
-                                alert("bookingData:"+bookingData["booking"])
+                                //alert("bookingData:"+bookingData["booking"])
                                 bookingData["booking"].push(queryData.id)
                                 var bookArray = bookingData.booking
 
@@ -120,7 +120,8 @@ const Booking2 = () => {
                                 }
 
                                 var userUpdate =axios.put(mongoUrl+"users",updateUser)
-                                alert("User Update"+userUpdate)
+                                //alert("User Update"+userUpdate)
+                                console.log("User Update"+userUpdate)
                         })
                     })
                     alert("Your Ticket has been booked. Reciept will be sent to your mail soon.")

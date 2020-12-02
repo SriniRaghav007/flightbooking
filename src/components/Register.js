@@ -15,7 +15,7 @@ const Register = ()=> {
         var mongoRequest = {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({"user":username,"pass":pass})
+            body: JSON.stringify({"user":username,"pass":pass,"booking":[]})
         }
 
         fetch(mongoUrl,mongoRequest).then(response => alert("Your Account has been successfully created"));

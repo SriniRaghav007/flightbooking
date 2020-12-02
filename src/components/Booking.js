@@ -37,7 +37,6 @@ const Booking = () => {
         <div>
           {
               bookData.map((data, key) => {
-              window.sessionStorage.setItem("bookingDetails",JSON.stringify(data))
               {var payUrl = "/payment?id="+queryData.id+"&price="+data.price}
               return (
                 <div key={key} className="card">
