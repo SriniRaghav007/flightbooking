@@ -11,6 +11,7 @@
 	background-size: cover;
   background-position: center;
   position: relative;
+  background-attachment: fixed;
 	height: 100vh;
  }
 
@@ -19,9 +20,19 @@
 	background-size: cover;
   background-position: center;
   position: relative;
+  background-attachment: fixed;
 	height: 100vh;
     
 }
+.back3{
+  background: linear-gradient(90deg,#000428,#004e92);
+	background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
 
 .searchbox{
   position: relative;
@@ -42,8 +53,9 @@ select option {
 }
 
 .card{
-  width: 80%;
+  width: 100%;
   align-self: center;
+  align-content:center;
 }
 
 .App{
@@ -63,3 +75,8 @@ select option {
   height: 30px;
   width:80px;
   background-color:rgb(133, 53, 238) }
+
+.gradient{
+  color:white;
+  font-family:"Roboto"
+}

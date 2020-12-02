@@ -28,31 +28,31 @@ const Search = () =>{
 
     
     return (
-        <div className="back2">
+        <div className="back3">
+        <div style={{"padding":"10px"}}></div>
         {searchData.map((data, key) => {
           return (
             <div key={key} className="align-items-center">
-              <Card className="gradient " style={{ width: '50%',alignContent:"center",marginLeft:"25%",marginBottom:"1%"}}>
+              <Card bg="dark" className="gradient " style={{ width: '80%',alignContent:"center",marginLeft:"10%",marginBottom:"1%"}}>
                     <Card.Body >
-                    {/* <Card.Header as="h5">Featured</Card.Header> */}
-                        <Card.Title>{data.company}</Card.Title>
-                        <Card.Text>
-                        From : {data.origin}<br/>
-                        To : {data.destination}<br/>
-                        Departure Time : {data.departureTime}<br/>
-                        Arrival Time : {data.arrivalTime}<br/>
-                        Total Duration : {data.duration}<br/>
-                        Cost : ₹{data.price}<br/>
-                        Seats Available : {data.availability}<br/>
+                    <Card.Title className="gradient" as="h2">{data.company}</Card.Title>
+                        <Card.Text className="gradient" >
+                        <pre style={{ color:"white",fontSize:"20px"}}>
+                        From : {data.origin}                                                         To : {data.destination}<br/>
+                        Departure Time : {data.departureTime}                                          Arrival Time : {data.arrivalTime}<br/>
+                        ------------------------------------ Duration : {data.duration} ------------------------------------ <br/>
+                        Cost : ₹{data.price}                                                         Seats Available : {data.availability}<br/>
+                        </pre>
                         </Card.Text>
-                        <Button variant="primary" onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
+                        <div style={{display: 'flex',justifyContent:'center', alignItems:'center'}}>
+                          <Button variant="primary" onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
+                        </div>
                     </Card.Body>
                 </Card> 
               <br/>
             </div>
           );
         })}
-        
       </div>
     )
 }

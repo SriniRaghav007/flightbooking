@@ -54,7 +54,7 @@ class Navbar extends Component {
         else{
             return(
             <nav className="NavbarItems">
-                    <h1 className="navbar-logo">React<i className="fab fa-react"></i></h1>
+                    <a href="/"><h1 className="navbar-logo">Airi<i className="fab fa-react"></i></h1></a>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
@@ -69,13 +69,12 @@ class Navbar extends Component {
                             )
                         })}
                     </ul> 
-                    <Button><a href ="/login">Login</a></Button>
-                    <Button><a href ="/register">Signup</a></Button>
+                    <a href ="/login"><Button>Login</Button></a>
+                    <a href ="/register"><Button>Signup</Button></a>
                 </nav>
             )
         }
         
     }
 }
-
 export default Navbar

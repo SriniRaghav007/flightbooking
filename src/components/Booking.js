@@ -1,6 +1,9 @@
 import {React,useState,useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import Button from 'react-bootstrap/Button';
+import "../css/App.css"
+import '../css/bootstrap.min.css';
 
 var url = require('url');
 var mongoUrl = "http://localhost:8080/"
@@ -39,7 +42,7 @@ const Booking = () => {
               bookData.map((data, key) => {
               {var payUrl = "/payment?id="+queryData.id+"&price="+data.price}
               return (
-                <div key={key} className="card">
+                <div key={key} className="card" style={{justifyContent:'center'}}>
                 Your Flight Details<br/>
                 Your Name : {token.user}<br/>
                 Airline Name : {data.company}<br/>
@@ -48,7 +51,7 @@ const Booking = () => {
                 Departure Time:{data.departureTime}<br/>
                 Arrival Time:{data.arrivalTime}<br/>
                 Price : ₹{data.price}<br/>
-                <button id="rzp-button1" ><a href={payUrl}>Proceed To Pay</a></button>
+                <Button id="rzp-button1" ><a href={payUrl}>Proceed To Pay</a></Button>
                 
               </div>
             );
