@@ -45,7 +45,7 @@ const Home = () => {
                     </select>
                   </div>
                   <div class="form-group">
-                    <label>Departure Date :
+                    <label>Departure Date :<br/>
                     <input type="date" name="date1" value={depdate} onChange={({target}) => setDepdate(target.value)} required /><br></br>
                     </label>
                   </div>
