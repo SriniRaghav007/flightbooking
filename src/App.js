@@ -5,6 +5,7 @@ import Search from './components/Search';
 import Booking from './components/Booking';
 import Booking2 from './components/Booking2';
 import Register from './components/Register';
+import Contact from './components/Contact'
 import {
   BrowserRouter as Router,
   Switch,
@@ -45,6 +46,9 @@ export default function App() {
           </Route>
           <Route path="/payment">
             <Booking2 />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/settings">
             <Settings />

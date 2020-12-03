@@ -21,10 +21,10 @@ const Home = () => {
       <div className="back">
           <div className="back2 ">
             <div className="searchbox align-items-center text-center">
-            <h1 className="display-6 py-2 text-truncate">Book Flights</h1>
-              <div >
+            <h1 className="display-6 py-2 text-truncate" style={{fontFamily:"Bungee Inline",fontSize:"50px"}}>Book Flights</h1>
+              <div style={{fontFamily:"Cabin",fontSize:"20px"}}>
                 <form className="form-group align-items-center" onSubmit={handleSubmit} >
-                  <div class="form-group">
+                  <div class="form-group" ><br/>
                     <label>From:</label>
                     <select value={from} onChange={({target}) => setFrom(target.value)}>
                       <option value="none" selected disabled hidden> Select an Option </option>
@@ -47,9 +47,9 @@ const Home = () => {
                   <div class="form-group">
                     <label>Departure Date :<br/>
                     <input type="date" name="date1" value={depdate} onChange={({target}) => setDepdate(target.value)} required /><br></br>
-                    </label>
+                    </label><br/>
                   </div>
-                    <input className="btn btn-primary mb-2"type="submit" value="Submit" />
+                    <input className="btn btn-primary btn-sm" style={{fontFamily:"Cabin",fontSize:"16px"}} type="submit" value="Submit" />
                 </form>
             </div>
           </div> 

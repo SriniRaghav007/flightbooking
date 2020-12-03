@@ -31,11 +31,12 @@ const Search = () =>{
         <div className="back3">
         <div style={{"padding":"10px"}}></div>
         {searchData.map((data, key) => {
+          var imagePath = "../logos/"+data.company+".svg"
           return (
             <div key={key} className="align-items-center">
               <Card bg="dark" className="gradient " style={{ width: '80%',alignContent:"center",marginLeft:"10%",marginBottom:"1%"}}>
                     <Card.Body >
-                    <Card.Title className="gradient" as="h2">{data.company}</Card.Title>
+                    <Card.Title as="h2"><img src={imagePath} style={{height:"50px"}}/></Card.Title>
                         <Card.Text className="gradient" >
                         <pre style={{ color:"white",fontSize:"20px"}}>
                         From : {data.origin}                                                         To : {data.destination}<br/>
@@ -45,7 +46,7 @@ const Search = () =>{
                         </pre>
                         </Card.Text>
                         <div style={{display: 'flex',justifyContent:'center', alignItems:'center'}}>
-                          <Button variant="primary" onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
+                          <Button variant="primary" style={{fontFamily:"Cabin"}} onClick={e => {var query="id="+data.id; history.push({pathname:"/booking",search:query})}}>Book Now</Button>
                         </div>
                     </Card.Body>
                 </Card> 

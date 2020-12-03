@@ -1,6 +1,7 @@
 import {React,setState,useState,useEffect} from 'react';
 import BookingListfronJSON from '../jsons/bookingData'
 import Card from 'react-bootstrap/Card'
+import '../css/App.css';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { Button } from "./button"
@@ -48,7 +49,7 @@ const Settings= () =>{
                 }
             }
             else{
-                alert("Passwords incorrect")
+                alert("Incorrect Password")
             }
         });
         
@@ -87,6 +88,7 @@ const Settings= () =>{
                     }
                     fetch(mongoUrl,mongoRequest2).then(response2 => response2.json()).then(
                         data2 =>{
+                            alert(data2[0])
                             alert("Flight Info\nAirline Name:"+data2[0].company+"\nOrigin Airport: "+data2[0].origin+"\nDestination Airport: "+data2[0].destination+"\nArrival Time: "+data2[0].arrivalTime+"\nDeparture Time: "+data2[0].departureTime+"\nPrice : "+data2[0].price)
                             console.log("Got Final Data"+JSON.stringify(data2[0]))
                             //booking.concat(JSON.stringify(data2[0]))
@@ -134,34 +136,34 @@ const Settings= () =>{
         }
         postbookingDetails();
     },[]) */
-    
-
-
-   
-
     return (
-        <div>
-            <h1>User Details</h1>
-            <p>Username: {user}</p>
+        <div className="back2">
+        <div style={{paddingTop:"10px",paddingLeft:"50px",fontFamily:"Cabin",color:"white"}}>
+            <h1 style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>Settings</h1>
+            <div>
+                <h2>User Details</h2>
+                <pre style={{fontSize:"20px",color:"white"}}>Username: {user}</pre>
+                <Button onClick={postbookingDetails} className="red">Get Booking Details</Button><br/><br/>
+            </div>
+            <div className="form-group">
             <label>
-                Current Password:
+            <h2>Change Password</h2>
+                Current Password<br/>
                 <input type="password" value={currentPass} onChange={({target}) => setcurrentPass(target.value)}/>
-            </label>
+            </label><br/>
             <label>
-                New Password:
-                <input type="password" value={pass} onChange={({target}) => setPass(target.value)}/>
-            </label>
+                New Password<br/>
+                <input type="password" style={{minLength:"8"}} value={pass} onChange={({target}) => setPass(target.value)}/>
+            </label><br/>
             <label>
-                Retype Password:
-                <input type="password" value={pass2} onChange={({target}) => setPass2(target.value)}/>
-            </label>
+                Retype Password<br/>
+                <input type="password" id='password' style={{border:"10px"}} value={pass2} onChange={({target}) => setPass2(target.value)}/>
+            </label><br/>
             <Button onClick={changePass}>Update Password</Button><br/>
+            </div>
             <br/>
             <br/>
-            <Button onClick={postbookingDetails} className="red">Get Booking Details</Button>
-            <br/>
-            <br/>
-            <Button onClick={deleteAccount} className="red">Delete Account</Button><br/>
+            <Button onClick={deleteAccount} style={{fontFamily:"Cabin",color:"red"}}>Delete Account</Button><br/>
             
             {/* <h2>Booking Details</h2>
             {   
@@ -188,6 +190,7 @@ const Settings= () =>{
                   );
                 
         })} */}
+        </div>
         </div>
     )
 }

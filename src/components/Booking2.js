@@ -142,9 +142,9 @@ const Booking2 = () => {
     }
     return(
 
-                <div>
+                <div style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px"}}>
                     <button onclick={displayRazorpay()}></button>
-                    <a href="/">Return to Home Page</a>
+                    <a href="/" style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px"}}>Return to Home Page</a>
                 </div>
     )
         

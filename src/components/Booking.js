@@ -42,17 +42,17 @@ const Booking = () => {
               bookData.map((data, key) => {
               {var payUrl = "/payment?id="+queryData.id+"&price="+data.price}
               return (
-                <div key={key} className="card" style={{justifyContent:'center'}}>
-                Your Flight Details<br/>
+                <div key={key} className="card" style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px"}}>
+                <br/>
+                <h1>Your Flight Details</h1><br/>
                 Your Name : {token.user}<br/>
                 Airline Name : {data.company}<br/>
                 Origin Airport : {data.origin}<br/>
                 Destination Airport : {data.destination}<br/>
-                Departure Time:{data.departureTime}<br/>
-                Arrival Time:{data.arrivalTime}<br/>
-                Price : ₹{data.price}<br/>
-                <Button id="rzp-button1" ><a href={payUrl}>Proceed To Pay</a></Button>
-                
+                Departure Time: {data.departureTime}<br/>
+                Arrival Time: {data.arrivalTime}<br/>
+                Price : ₹{data.price}<br/><br/>
+                <a href={payUrl} style={{width:"100%"}}><Button id="rzp-button1" style={{width:"100%",fontFamily:"Cabin",fontSize:"18px"}}>Proceed To Pay</Button></a>
               </div>
             );
         })}
@@ -60,9 +60,16 @@ const Booking = () => {
     )}
     else{
       return(
-        <div>
-          You must login to book a flight
-          <a href="/login">Login</a>
+        <div style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"30px"}}>
+          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+            <pre>
+              <br/>
+            You must login to book a flight<br/><br/>
+            <a href="/login"><Button id="rzp-button1" style={{width:"100%",fontFamily:"Cabin",fontSize:"18px"}}>Login</Button></a>
+            </pre>
+          
+          </div>
+          
         </div>
       )
     }

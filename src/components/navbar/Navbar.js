@@ -31,30 +31,30 @@ class Navbar extends Component {
             return(
 
                 <nav className="NavbarItems">
-                    <a href="/"><h1 className="navbar-logo">Airi<i className="fab fa-react"></i></h1></a>
+                    <a href="/" style={{fontFamily:"Major Mono Display"}}><h1 className="navbar-logo">Airi<i className="fab fa-react"></i></h1></a>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
-                    <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                    <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'} >
                         {MenuItems.map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <a className={item.cName} href={item.url}>
+                                    <a className={item.cName} href={item.url} style={{fontFamily:"Cabin",fontSize:"18px"}}>
                                     {item.title}
                                     </a>
                                 </li>
                             )
                         })}
                     </ul> 
-                    <Button onClick={this.handleLogout}>Logout</Button>
-                    <a href ="/settings"><Button>Settings</Button></a>
+                    <a href="#" style={{fontFamily:"Cabin"}}><Button onClick={this.handleLogout} >Logout</Button></a>
+                    <a href ="/settings" style={{fontFamily:"Cabin"}}><Button>Settings</Button></a>
                 </nav>
             )
         }
         else{
             return(
             <nav className="NavbarItems">
-                    <a href="/"><h1 className="navbar-logo">Airi<i className="fab fa-react"></i></h1></a>
+                    <a href="/"><h1 className="navbar-logo" style={{fontFamily:"Major Mono Display"}}>Airi<i className="fab fa-react"></i></h1></a>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
@@ -62,15 +62,15 @@ class Navbar extends Component {
                         {MenuItems.map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <a className={item.cName} href={item.url}>
+                                    <a className={item.cName} href={item.url} style={{fontFamily:"Cabin",fontSize:"18px"}}>
                                     {item.title}
                                     </a>
                                 </li>
                             )
                         })}
                     </ul> 
-                    <a href ="/login"><Button>Login</Button></a>
-                    <a href ="/register"><Button>Signup</Button></a>
+                    <a href ="/login" style={{fontFamily:"Cabin"}}><Button>Login</Button></a>
+                    <a href ="/register" style={{fontFamily:"Cabin"}}><Button>Signup</Button></a>
                 </nav>
             )
         }
