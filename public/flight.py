@@ -3,7 +3,9 @@ import json
 import hashlib
 from datetime import datetime,date,time,timedelta
 flightList = list()
-airports = ['BLR','MAA','BOM','DEL']
+airports = [('BLR',"Bengaluru"),('MAA','Chennai'),('BOM',"Mumbai"),('DEL',"Delhi")]
+airports2=['BLR','MAA','BOM',"DEL"]
+
 companies = ["SpiceJet","Air Asia","Indigo","GoAir","Air India"]
 arrivalTime=datetime.now()
 duration = 0
@@ -21,35 +23,37 @@ for date in range(1,24):
         if date in range(10):
             date = "0"+str(date)
         origin = choice(airports)
-        destination = choice([i for i in airports if i != origin])
+        destination = choice([i for i in airports2 if i != origin[0]])
+
         departureTime = time(hour=choice([x for x in range(22)]),minute=choice([x for x in range(59)]))
-        if((origin=="BLR" and destination=="MAA") or (origin=="MAA" and destination=="BLR")):
+        if((origin[0]=="BLR" and destination=="MAA") or (origin[0]=="MAA" and destination=="BLR")):
             hours_added = timedelta(hours = 1 ,minutes=10)
             duration = "1hr10min"
             arrivalTime = time_plus(departureTime,hours_added)
-        if((origin=="BLR" and destination=="BOM") or (origin=="BOM" and destination=="BLR")):
+        if((origin[0]=="BLR" and destination=="BOM") or (origin[0]=="BOM" and destination=="BLR")):
             hours_added = timedelta(hours = 1,minutes = 55)
             duration = "1hr55min"
             arrivalTime = time_plus(departureTime,hours_added)
-        if((origin=="BLR" and destination=="DEL") or (origin=="DEL" and destination=="BLR")):
+        if((origin[0]=="BLR" and destination=="DEL") or (origin[0]=="DEL" and destination=="BLR")):
             hours_added = timedelta(hours = 3 , minutes=5)
             duration = "3hr5min"
             arrivalTime = time_plus(departureTime,hours_added)
-        if((origin=="MAA" and destination=="BOM") or (origin=="BOM" and destination=="MAA")):
+        if((origin[0]=="MAA" and destination=="BOM") or (origin[0]=="BOM" and destination=="MAA")):
             hours_added = timedelta(hours = 2,minutes=15)
             duration = "2hr15min"
             arrivalTime = time_plus(departureTime,hours_added)
-        if((origin=="MAA" and destination=="DEL") or (origin=="DEL" and destination=="MAA")):
+        if((origin[0]=="MAA" and destination=="DEL") or (origin[0]=="DEL" and destination=="MAA")):
             hours_added = timedelta(hours = 3, minutes=20)
             duration = "3hr20min"
             arrivalTime = time_plus(departureTime,hours_added)
-        if((origin=="BOM" and destination=="DEL") or (origin=="DEL" and destination=="BOM")):
+        if((origin[0]=="BOM" and destination=="DEL") or (origin[0]=="DEL" and destination=="BOM")):
             hours_added = timedelta(hours = 2,minutes=25)
             duration = "2hr25min"
             arrivalTime = time_plus(departureTime,hours_added)
         
         flightDetail={
-            "origin": origin,
+            "origin": origin[0],
+            "originFullForm":origin[1],
             "destination": destination,
             "duration": duration,
             "departureDate":f"2020-12-{date}",

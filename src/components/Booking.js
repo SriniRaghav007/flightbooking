@@ -43,7 +43,7 @@ const Booking = () => {
               bookData.map((data, key) => {
               {var payUrl = "/payment?id="+queryData.id+"&price="+data.price}
               return (
-                  <div key={key} className="card" style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px",color:"white"}}>
+                  <div key={key} className="card2" style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px",color:"white"}}>
                   <br/>
                   <h1>Your Flight Details</h1><br/>
                   Your Name : {token.user}<br/>

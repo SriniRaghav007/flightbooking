@@ -15,7 +15,7 @@ const Booking2 = () => {
     var mongoRequest = {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(queryData)
+        body: JSON.stringify(queryData.id)
     }
     /*
     useEffect(() => {
@@ -125,6 +125,7 @@ const Booking2 = () => {
                         })
                     })
                     alert("Your Ticket has been booked. Reciept will be sent to your mail soon.")
+ 
                     history.push("/")
                 }
                 if(result.data.status === "fail"){
