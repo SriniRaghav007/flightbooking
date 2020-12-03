@@ -4,6 +4,7 @@ import {
     Link,
     useHistory
   } from "react-router-dom";
+  import '../css/App.css'
 import '../css/main.css'
 import '../css/util.css'
 import Logo from "../images/icons/favicon copy.ico"
@@ -69,6 +70,11 @@ function Login (){
                         Login
                         </button>
                     </div>
+                    <div class="text-center p-t-90">
+						<a style={{fontSize:"20px"}} href="/register">
+							Dont have an Account?
+						</a>
+					</div>
                     </form>
                 </div>
                 </div>

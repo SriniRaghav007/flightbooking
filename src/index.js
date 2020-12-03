@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./components/navbar/Navbar";
+import Navbar2 from "./components/navbar/Navbar2";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
     <App />
+    <Navbar2 />
   </React.StrictMode>,
   document.getElementById('root')
 );

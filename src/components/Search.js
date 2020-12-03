@@ -36,7 +36,7 @@ const Search = () =>{
             <div key={key} className="align-items-center">
               <Card bg="dark" className="gradient " style={{ width: '80%',alignContent:"center",marginLeft:"10%",marginBottom:"1%"}}>
                     <Card.Body >
-                    <Card.Title as="h2"><img src={imagePath} style={{height:"50px"}}/></Card.Title>
+                    <Card.Title as="h2"><img src={imagePath} style={{height:"80px"}}/></Card.Title>
                         <Card.Text className="gradient" >
                         <pre style={{ color:"white",fontSize:"20px"}}>
                         From : {data.origin}                                                         To : {data.destination}<br/>
