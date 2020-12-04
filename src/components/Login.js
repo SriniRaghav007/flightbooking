@@ -9,8 +9,8 @@ import '../css/main.css'
 import '../css/util.css'
 import Logo from "../images/icons/favicon copy.ico"
 const axios = require('axios');
-var mongoUrl = "http://localhost:8080/auth"
-//var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/auth"
+//var mongoUrl = "http://localhost:8080/auth"
+var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/auth"
 
 function Login (){
     var history = useHistory();

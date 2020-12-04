@@ -7,8 +7,8 @@ import "../css/App.css"
 import '../css/bootstrap.min.css';
 
 var url = require('url');
-var mongoUrl = "http://localhost:8080/"
-//var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
+//var mongoUrl = "http://localhost:8080/"
+var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
 
 
 const Booking = () => {
@@ -46,7 +46,7 @@ const Booking = () => {
               return (
                   <div key={key} className="card2" style={{justifyContent:'center', alignItems:'center',fontFamily:"Roboto",fontSize:"20px",color:"white"}}>
                   <br/>
-                  <h1>Your Flight Details</h1><br/>
+                  <h1 className={{marginLeft:"20px"}}>Your Flight Details</h1><br/>
                   Your Name : {token.user}<br/>
                   Airline Name : {data.company}<br/>
                   Origin Airport : {data.origin}<br/>

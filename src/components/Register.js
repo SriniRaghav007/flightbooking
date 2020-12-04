@@ -4,8 +4,8 @@ import '../css/main.css'
 import '../css/util.css'
 import Logo from "../images/icons/favicon copy.ico"
 
-var mongoUrl = "http://localhost:8080/users"
-//var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/users"
+//var mongoUrl = "http://localhost:8080/users"
+var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/users"
 const Register = ()=> {
     var history = useHistory();
     const [username,setUsername] = useState()

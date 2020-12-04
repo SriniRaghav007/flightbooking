@@ -4,13 +4,13 @@ import axios from 'axios';
 import logo from '../images/icons/favicon.ico'
 import { useHistory } from "react-router-dom";
 
-var razorpayUrl = "http://localhost:8080"
+var razorpayUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight"
 var url = require('url');
 const Booking2 = () => {
     const [bookData, setBookData] = useState([]);
     const history = useHistory()
-    var mongoUrl = "http://localhost:8080/"
-    //var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
+    //var mongoUrl = "http://localhost:8080/"
+    var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
     var currentUrl = window.location.href;
     var parsedUrl = url.parse(currentUrl, true);
     var queryData = parsedUrl.query
