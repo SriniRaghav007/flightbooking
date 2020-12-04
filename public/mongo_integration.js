@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const jwt = require('express-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 
-var url = "mongodb://localhost:27017/";
+//var url = "mongodb://localhost:27017/";
+var url = "mongodb+srv://vihar:atlas@flightbookingsystem.tkfqu.mongodb.net/<dbname>?retryWrites=true&w=majority" 
 const jwtSecret = 'verySecretpasswordforwebtech@PES2020';
 
 

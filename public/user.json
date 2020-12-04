@@ -1,0 +1,87 @@
+[{
+  "_id": {
+    "$oid": "5fc4d9ea1443f9679c0b4f30"
+  },
+  "user": "hi",
+  "pass": "hi",
+  "lastModified": {
+    "$date": "2020-12-02T09:51:57.519Z"
+  },
+  "booking": [
+    "5fc46d057a28f62a54a12bd8",
+    "5fc46d057a28f62a54a12bdb",
+    "5fc46d057a28f62a54a12bdd",
+    "5fc46d057a28f62a54a12bd8",
+    "5fc46d057a28f62a54a12bdb"
+  ]
+},{
+  "_id": {
+    "$oid": "5fc4db8e1443f9679c0b4f31"
+  },
+  "user": "Vihar",
+  "pass": "pop",
+  "booking": [
+    "98249585dca94d54f5e2fac74ef9f45c",
+    "da27251de8efdc3ba8c68a56a61685f2",
+    "3764271058725378ccd578da47bfcc45",
+    "23627b65f0dc76f20eeff903bb8818d3",
+    "19a997464defdaa77e9941e4fe95978b"
+  ],
+  "lastModified": {
+    "$date": "2020-12-03T08:04:16.649Z"
+  }
+},{
+  "_id": {
+    "$oid": "5fc4e2a31443f9679c0b4f32"
+  },
+  "user": "Vihar4",
+  "pass": "Vihar"
+},{
+  "_id": {
+    "$oid": "5fc4ee9f9f49b15cf845750a"
+  },
+  "user": "aaa",
+  "pass": "aaaa"
+},{
+  "_id": {
+    "$oid": "5fc4eeb79f49b15cf845750b"
+  },
+  "user": "aawa",
+  "pass": "awsdd"
+},{
+  "_id": {
+    "$oid": "5fc500e69f49b15cf845750c"
+  },
+  "user": "Vihar5",
+  "pass": "vihar"
+},{
+  "_id": {
+    "$oid": "5fc50dd69f49b15cf845750d"
+  },
+  "user": "Vihar1234",
+  "pass": "Password"
+},{
+  "_id": {
+    "$oid": "5fc78704c4907b58183ffd41"
+  },
+  "user": "Viked",
+  "pass": "Joker1",
+  "booking": [
+    "b454899a622fd25224ad804705ec3227"
+  ],
+  "lastModified": {
+    "$date": "2020-12-02T12:24:14.374Z"
+  }
+},{
+  "_id": {
+    "$oid": "5fc7882cc4907b58183ffd42"
+  },
+  "user": "Vi",
+  "pass": "VIh",
+  "booking": [
+    "b454899a622fd25224ad804705ec3227"
+  ],
+  "lastModified": {
+    "$date": "2020-12-02T12:29:29.477Z"
+  }
+}]
