@@ -21,10 +21,10 @@ const Home = () => {
       <div className="back">
           <div className="back2 ">
             <div className="searchbox align-items-center text-center">
-            <h1 className="display-6 py-2 text-truncate" style={{fontFamily:"Bungee Inline",fontSize:"50px"}}>Book Flights</h1>
+            <h1 className="display-6 py-2 text-truncate" style={{fontFamily:"Cabin",fontSize:"60px"}}>Book Flights</h1>
               <div style={{fontFamily:"Cabin",fontSize:"20px"}}>
                 <form className="form-group align-items-center" onSubmit={handleSubmit} >
-                  <div class="form-group" ><br/>
+                  <div class="form-group" >
                     <label>From:</label>
                     <select value={from} onChange={({target}) => setFrom(target.value)}>
                       <option value="none" selected disabled hidden> Select an Option </option>
