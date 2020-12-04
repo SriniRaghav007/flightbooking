@@ -89,7 +89,7 @@ const Settings= () =>{
                     }
                     fetch(mongoUrl,mongoRequest2).then(response2 => response2.json()).then(
                         data2 =>{
-                            alert(data2[0])
+                            //alert(data2[0])
                             alert("Flight Info\nAirline Name:"+data2[0].company+"\nOrigin Airport: "+data2[0].origin+"\nDestination Airport: "+data2[0].destination+"\nArrival Time: "+data2[0].arrivalTime+"\nDeparture Time: "+data2[0].departureTime+"\nPrice : "+data2[0].price)
                             console.log("Got Final Data"+JSON.stringify(data2[0]))
                             //booking.concat(JSON.stringify(data2[0]))

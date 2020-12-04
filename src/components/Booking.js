@@ -1,8 +1,7 @@
 import {React,useState,useEffect} from 'react';
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card'
 import "../css/App.css"
 import '../css/bootstrap.min.css';
 
@@ -12,7 +11,7 @@ var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
 
 
 const Booking = () => {
-  var history = useHistory();
+    var token ={"login":"False"}
     const [bookData, setBookData] = useState([]);
     var currentUrl = window.location.href;
     var parsedUrl = url.parse(currentUrl, true);
@@ -33,11 +32,8 @@ const Booking = () => {
     if(window.sessionStorage.getItem("token")){
       var token = jwt_decode(window.sessionStorage.getItem("token"))
     }
-    else{
-      var token ={"login":"False"}  
-    }
 
-    if(token.login == "True"){
+    if(token.login === "True"){
     return (
         <div>
           {

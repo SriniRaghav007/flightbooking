@@ -21,6 +21,7 @@ const Search = () =>{
         body: JSON.stringify(qdata)
     }
     useEffect(() => {
+        alert("Searching for flights ...")
         const getFlights = () => {fetch(mongoUrl,mongoRequest).then(response => response.json()).then(data => setSearches(data));}
         getFlights()
       }, []);
