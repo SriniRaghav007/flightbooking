@@ -7,8 +7,6 @@ import '../css/bootstrap.min.css';
 var url = require('url');
 var mongoUrl = "http://localhost:8080/"
 
-
-
 const Search = () =>{
     const history = useHistory();
     const [searchData, setSearches] = useState([]);

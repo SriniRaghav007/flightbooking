@@ -11,6 +11,7 @@ const Settings= () =>{
     const [bookingDetailList2,setbookingDetailList2] = useState([]);
 
     var mongoUrl = "http://localhost:8080"
+    //var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight"
     var user = jwt_decode(window.sessionStorage.getItem("token")).user
     /* var booking = [JSON.parse(window.sessionStorage.getItem("booking"))]
     console.log(booking) */

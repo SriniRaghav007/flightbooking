@@ -8,6 +8,7 @@ import '../css/bootstrap.min.css';
 
 var url = require('url');
 var mongoUrl = "http://localhost:8080/"
+//var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
 
 
 const Booking = () => {

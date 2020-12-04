@@ -4,11 +4,13 @@ import axios from 'axios';
 import logo from '../images/icons/favicon.ico'
 import { useHistory } from "react-router-dom";
 
+var razorpayUrl = "http://localhost:8080"
 var url = require('url');
 const Booking2 = () => {
     const [bookData, setBookData] = useState([]);
     const history = useHistory()
-     var mongoUrl = "http://localhost:8080/"
+    var mongoUrl = "http://localhost:8080/"
+    //var mongoUrl = "https://us-central1-flightbookingpes.cloudfunctions.net/flight/"
     var currentUrl = window.location.href;
     var parsedUrl = url.parse(currentUrl, true);
     var queryData = parsedUrl.query
@@ -52,7 +54,7 @@ const Booking2 = () => {
             return;
         }
   
-        const result = await axios.post("http://localhost:8081/payment/orders",{"amount":price,"currency":"INR"});
+        const result = await axios.post(razorpayUrl+"/payment/orders",{"amount":price,"currency":"INR"});
   
         if (!result) {
             alert("Server error. Are you online?");
@@ -76,7 +78,7 @@ const Booking2 = () => {
                     "razorpayOrderId": response.razorpay_order_id,
                     "razorpaySignature": response.razorpay_signature,
                 };
-                const result = await axios.post("http://localhost:8081/payment/verify", data);
+                const result = await axios.post(razorpayUrl+"/payment/verify", data);
                 alert("Verifying your payment");
                 if(result.data.status === "success"){
 
