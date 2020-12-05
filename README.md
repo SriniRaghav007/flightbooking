@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 MongoDB Integration done using REST API hosted on Firebase \
 Express.js used for creating the REST API and managing the CRUD operations. \
 React used for the frontend development \
-Node.js helped in the backend development \
+Node.js helped in the backend development 
 
 ## Available Scripts
 
