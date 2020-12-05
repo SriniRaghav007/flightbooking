@@ -4,9 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## MERN Stack 
-MongoDB Integration done using REST API hosted on Firebase \
-Express.js used for creating the REST API and managing the CRUD operations. \
-React used for the frontend development \
+MongoDB Integration done using REST API while database hosted on mLabs \
+Express.js used for creating the REST API hosted on Firebase and managing the CRUD operations. \
+React used for the frontend development and hosted on Vercel \
 Node.js helped in the backend development 
 
 ## Available Scripts
