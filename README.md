@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## MERN Stack 
+MongoDB Integration done using REST API hosted on Firebase \
+Express.js used for creating the REST API and managing the CRUD operations. \
+React used for the frontend development \
+Node.js helped in the backend development \
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -21,9 +28,4 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
-## MERN Stack 
-MongoDB Integration done using REST API hosted on Firebase
-Express.js used for creating the REST API and managing the CRUD operations.
-React used for the frontend development
-Node.js helped in the backend development
 
