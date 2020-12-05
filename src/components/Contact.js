@@ -9,8 +9,8 @@ function Contact() {
                 <div>
                     Developers for this Project<br/>
                     Vihar Devalla - PES2UG19CS453<br/>
-                    Srinivasa Raghavan - PES2UG19CS<br/>
-                    Toshani Rungta - PES2UG19CS<br/>
+                    Srinivasa Raghavan - PES2UG19CS407<br/>
+                    Toshani Rungta - PES2UG19CS433<br/>
                 </div>
             </div>
         </div>
